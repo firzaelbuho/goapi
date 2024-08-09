@@ -1,9 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"github.com/gin-gonic/gin"
+)
 
 func main() {
-	for i := 0; i < 100; i++ {
-		fmt.Println("Hello, World! - ",i)
-	}
+	r := gin.Default()
+	r.GET("/", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"message": "Hello, World!",
+		})
+	})
+	r.Run() // Default runs on :8080
 }
