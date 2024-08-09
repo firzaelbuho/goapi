@@ -1,6 +1,6 @@
 module elbuhoapi
 
-go 1.20.0
+go 1.20
 
 require (
 	github.com/bytedance/sonic v1.12.1 // indirect
