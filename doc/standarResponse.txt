@@ -1,0 +1,31 @@
+// if success
+{
+    "statusCode" : 200,
+    "data" : "data"
+    
+   
+}
+// if error
+{
+    
+    "statusCode" : 200,
+    "error" : {
+        "username" : [ "username is must unique", "username too long"]
+    }
+}
+
+// atau bisa juga pakai error code, biar nnati dihandle sama frontend , juga biar bisa internasionalisasi bahasa dari sisi FE
+
+{
+    
+    "statusCode" : 200,
+    "error" : {
+        "username" : [ "UNIQUE", "TO_LONG"]
+    }
+}
+
+// kalau sudah pakai logging / monitoring bisa juga tambah "requestId"/"traceId" ketika error jika diperlukan
+// statusCode di body response juga optional karena sudah ada di HTTPStatusCode
+//  Response gagal karena data salah dari client => 4xx
+//  salah dari server misal database dll =>  5xx
+// gunakan statusCode pada httpStatusCode jangan paksa error 5xx tapi ditulis 200 cuma demi muncul responnya
